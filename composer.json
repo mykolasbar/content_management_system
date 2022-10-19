@@ -1,0 +1,19 @@
+{
+    "name": "hp/content_management_system",
+    "autoload": {
+        "psr-4": {
+            "Classes\\": ["src"]
+        }
+    },
+    "authors": [
+        {
+            "name": "mykolasbar",
+            "email": "106963436+mykolasbar@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.13",
+        "doctrine/annotations": "^1.13",
+        "symfony/cache": "^6.1"
+    }
+}
