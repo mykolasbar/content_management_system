@@ -17,10 +17,8 @@ if(session_status() != 2) {
     session_start();
 }
 
-echo "<div style='text-align:right' class = 'm-2'>You are logged in as <b>" . $_SESSION['username'] . "</b> <form action='' method='POST'><button name='logout'>Logout</button></form></div>";
-
 if (!isset($_SESSION['username']))
-    header('Location: user.php');
+    header('Location: login');
 
 $allPosts = new Classes\Posts;
 
@@ -84,10 +82,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }
 }
 
+echo "<div style='text-align:right' class = 'm-2'>You are logged in as <b>" . $_SESSION['username'] . "</b> <form action='' method='POST'><button name='logout'>Logout</button></form></div>";
+
 echo '<table class="justify-content-center m-4">';
 foreach ($allPosts as $post) {
     echo '<tr>
-                <td>
+                <td style = "max-width:400px">
                     <b><a href="editpost.php?editid='.$post->getId().'" target = "_blank">'.$post->getTitle().'</a></b>
                     <div style = "font-size:smaller"><b>Sukurta: </b>'.$post->getcreatedAt()->format('Y-m-d H:i:s').'
                 </td>
@@ -103,7 +103,7 @@ foreach ($allPosts as $post) {
 }
 echo '</table>';
 
-echo "<div class='d-flex justify-content-start m-3 w-75'><strong>Add new article</strong><br><form action='' method='POST' enctype='multipart/form-data' class='w-100'><label for = 'addtitle' class='m-2'>Title </label><input name = 'addtitle' type = 'text' class = 'w-75'></input><br><label for = 'addcontent' class='m-2'> Text </label><textarea name = 'addcontent' type = 'text' class = 'w-75 h-100'></textarea><br><input name = 'submitarticle' type='submit' value='Submit' class='btn btn-danger m-2'></form>";
+echo "<div class='d-flex justify-content-start m-4 w-75'><strong>Add new article</strong><br><form action='' method='POST' enctype='multipart/form-data' class='w-100'><label for = 'addtitle' class='m-2'>Title </label><input name = 'addtitle' type = 'text' class = 'w-75'></input><br><label for = 'addcontent' class='m-2'> Text </label><textarea name = 'addcontent' type = 'text' class = 'w-75 h-100' wrap='hard'></textarea><br><input name = 'submitarticle' type='submit' value='Submit' class='btn btn-danger m-2'></form>";
 
 ?>
 <body>

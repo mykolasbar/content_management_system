@@ -23,33 +23,34 @@
     if (!isset($_SESSION['username'])){
         echo
             "<nav>
-            <div>
-                <ul>
-                    <li><a href = 'user'>ARTICLES</a></li>";
+                <div>
+                    <ul>
+                        <li><a href = 'user'>ARTICLES</a></li>";
             foreach ($allPosts as $id => $post) {
                 if ($post->getinMenu() == 1)
                     echo 
-                    '<li><a href="post.php?postid='.$post->getId().'">'.$post->getTitle().'</a></li>';
+                        '<li><a href="post.php?postid='.$post->getId().'">'.$post->getTitle().'</a></li>';
                         }
-        echo    "</ul>
-            </div>
-            </nav>";}
+        echo        "</ul>
+                </div>
+            </nav>";
+    }
 
     if (isset($_SESSION['username'])) {
         echo  "<nav>
                 <div>
                     <ul>
                         <li><a href = 'user'>ARTICLES</a></li>
-                        <li><a href = 'admin'>ADMIN</a></li>";
-    
+                        <li><a href = 'admin'>ADMIN</a></li>";   
         foreach ($allPosts as $id => $post) {
             if ($post->getinMenu() == 1)
             echo 
                         '<li><a href="post.php?postid='.$post->getId().'">'.$post->getTitle().'</a></li>';
                 }
-            echo     "</ul>
-                    </div>
-                </nav>";}
+        echo        "</ul>
+                </div>
+            </nav>";
+    }
     ?>
 </body>
 </html>

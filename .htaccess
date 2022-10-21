@@ -2,7 +2,7 @@ RewriteEngine on
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-l
-RewriteRule ^(.*)$ views/index.php [QSA,L]
+RewriteRule ^(.*)$ index.php [QSA,L]
 
 
 

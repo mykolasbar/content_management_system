@@ -11,7 +11,7 @@
 <?php
 // require '../vendor/autoload.php';
 // require '../src/Posts.php';
-include '../bootstrap.php';
+include 'bootstrap.php';
 include 'header.php';
 
 if(session_status() != 2){

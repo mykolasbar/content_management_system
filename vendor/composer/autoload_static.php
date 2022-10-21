@@ -167,7 +167,7 @@ class ComposerStaticInitb537ac7d05927d3ed86ca4973fa0dfa5
         ),
         'Classes\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/src/models',
         ),
     );
 

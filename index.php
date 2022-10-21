@@ -1,5 +1,5 @@
 <?php
-    require_once '../bootstrap.php';
+    require_once 'bootstrap.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,53 +19,62 @@ $request = $_SERVER['REQUEST_URI'];
 
 switch ($request) {
     case '/content_management_system/views/':
-        require 'user.php';
+        require 'views/user.php';
+        break;
+    case '/content_management_system/views':
+        require 'views/user.php';
         break;
     case '/content_management_system/views/user':
-        require 'user.php';
+        require 'views/user.php';
         break;
     case '/content_management_system/views/admin':
-        require 'admin.php';
+        require 'views/admin.php';
         break;
     case '/content_management_system/articles':
-        require 'user.php';
+        require 'views/user.php';
         break;
     case '/content_management_system/admin':
-        require 'admin.php';
+        require 'views/admin.php';
         break;
+    case '/content_management_system/admin/':
+        require 'views/user.php';
+        break; 
     case '/content_management_system/home':
-        require 'user.php';
+        require 'views/user.php';
         break; 
     case '/content_management_system/admin.php':
-        require 'admin.php';
+        require 'views/admin.php';
         break;   
     case '/content_management_system/login.php':
-        require 'login.php';
+        require 'views/login.php';
         break;
     case '/content_management_system/views/login':
-        require 'login.php';
+        require 'views/login.php';
         break;
     case '/content_management_system/login':
-        require 'login.php';
+        require 'views/login.php';
         break;
     case '/content_management_system/login.php':
-        require 'login.php';
+        require 'views/login.php';
         break;
     case '/content_management_system/user.php':
-        require 'user.php';
+        require 'views/user.php';
         break;
     case '/content_management_system/user':
-        require 'user.php';
+        require 'views/user.php';
         break;    
     case str_contains($request, 'postid='):
-        require 'post.php';
+        require 'views/post.php';
         break;
     case str_contains($request, 'editid='):
-        require 'editpost.php';
+        require 'views/editpost.php';
         break;
     case str_contains($request, '/content_management_system/views/editpost'):
-        require 'editpost.php';
+        require 'views/editpost.php';
         break;
-    }
-    
+    default: 
+        http_response_code(404);
+        require 'views/404.html';
+}
 ?>
+    

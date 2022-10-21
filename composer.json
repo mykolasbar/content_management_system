@@ -2,7 +2,7 @@
     "name": "hp/content_management_system",
     "autoload": {
         "psr-4": {
-            "Classes\\": ["src"]
+            "Classes\\": ["src/models"]
         }
     },
     "authors": [
