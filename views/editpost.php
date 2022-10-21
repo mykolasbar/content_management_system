@@ -9,9 +9,7 @@
     <title>Edit</title>
 </head>
 <?php
-// require '../vendor/autoload.php';
-// require '../src/Posts.php';
-include 'bootstrap.php';
+// include '../bootstrap.php';
 include 'header.php';
 
 if(session_status() != 2){
@@ -33,12 +31,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     if (isset($_POST['submitarticle'])) {
-        // $newPost = new Posts;
         $post = $entityManager->find('Classes\Posts', $_GET['editid']);
         if (isset($_POST['addtitle']) && isset($_POST['addcontent'])){
             $post->setTitle($_POST['addtitle']);
             $post->setContent($_POST['addcontent']);
-            // $newPost->setcreatedAt();
             $entityManager->persist($post);
             $entityManager->flush();
             header('Location: admin');

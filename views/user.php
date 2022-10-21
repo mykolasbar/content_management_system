@@ -11,23 +11,15 @@
 </head>
 <?php
 
-// require './src/Posts.php';
 include 'header.php';
 
 if(session_status() != 2){
     session_start();
 }
 
-// if (!isset($_SESSION['username']))
-//     echo "<div style='text-align:right'><form action='' method='POST' class = 'm-2'><button name='login'>Log in</button></form></div>";
 if (isset($_SESSION['username']))
     echo "<div style='text-align:right' class = 'm-2'>You are logged in as <b>" . $_SESSION['username'] . "</b> <form action='' method='POST'><button name='logout'>Logout</button></form></div>";
 
-// if($_SERVER["REQUEST_METHOD"] === "POST"){
-//     if (isset($_POST['login'])) {
-//         header('Location: login');
-//     }
-// }
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     if (isset($_POST['logout'])) {
@@ -44,13 +36,22 @@ $allPosts = $productRepository->findAll();
 
 
 foreach ($allPosts as $id => $post) {
-    echo '<div class="justify-content-center m-4"  style = "width:800px">
-            <div><h3><a href="post.php?postid='.$post->getId().'">'.$post->getTitle().'</a></h3></div>
-            <div style = "font-size:smaller"><b>Sukurta: </b>'.$post->getcreatedAt()->format('Y-m-d H:i:s').'</div>
-            <div>'.nl2br($post->getContent()).'</div>
+    echo '<div class="justify-content-center m-5" style = "width:850px">
+            <div style = "width:800px"><h3><a href="post.php?postid='.$post->getId().'">'.$post->getTitle().'</a></h3></div>
+            <div style = "font-size:smaller; padding-bottom:15px"><b>Sukurta: </b>'.$post->getcreatedAt()->format('Y-m-d H:i:s').'</div>
+            <div align="justify">'.substr(nl2br($post->getContent()), 0, 350).'... <a href="post.php?postid='.$post->getId().'" style = "color:black">Read more</a></div>
          </div>';
 }
 
+
+
+// $chars = explode("\n", nl2br($post->getContent()));
+// print_r($chars);
+
+// foreach ($chars as $char) {
+//     echo $char;
+//     echo "<br>";
+// }
 
 ?>
 <body>

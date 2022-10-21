@@ -18,18 +18,21 @@
 $request = $_SERVER['REQUEST_URI'];
 
 switch ($request) {
+    case '/content_management_system/':
+        require 'views/user.php';
+        break;
     case '/content_management_system/views/':
         require 'views/user.php';
         break;
-    case '/content_management_system/views':
-        require 'views/user.php';
-        break;
-    case '/content_management_system/views/user':
-        require 'views/user.php';
-        break;
-    case '/content_management_system/views/admin':
-        require 'views/admin.php';
-        break;
+    // case '/content_management_system/views/user':
+    //     require 'views/user.php';
+    //     break;
+    // case '/content_management_system/views/user.php':
+    //     require 'views/user.php';
+    //     break;
+    // case '/content_management_system/views/admin':
+    //     require 'views/admin.php';
+    //     break;
     case '/content_management_system/articles':
         require 'views/user.php';
         break;
@@ -48,9 +51,9 @@ switch ($request) {
     case '/content_management_system/login.php':
         require 'views/login.php';
         break;
-    case '/content_management_system/views/login':
-        require 'views/login.php';
-        break;
+    // case '/content_management_system/views/login':
+    //     require 'views/login.php';
+    //     break;
     case '/content_management_system/login':
         require 'views/login.php';
         break;
@@ -63,15 +66,21 @@ switch ($request) {
     case '/content_management_system/user':
         require 'views/user.php';
         break;    
+    case '/content_management_system/user/':
+        require 'views/user.php';
+        break;    
     case str_contains($request, 'postid='):
         require 'views/post.php';
         break;
     case str_contains($request, 'editid='):
         require 'views/editpost.php';
         break;
-    case str_contains($request, '/content_management_system/views/editpost'):
-        require 'views/editpost.php';
-        break;
+    // case str_contains($request, '/content_management_system/views/editpost'):
+    //     require 'views/editpost.php';
+    //     break;
+    // case str_contains($request, '/content_management_system/views/post'):
+    //     require 'views/editpost.php';
+    //     break;
     default: 
         http_response_code(404);
         require 'views/404.html';
