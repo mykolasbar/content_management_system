@@ -26,4 +26,4 @@ A simple content management system with functionality for adding and updating ar
     <li>To access the admin section, go to localhost/content_management_system/admin and enter your chosen user name and "password" as password</li>
 </ul>
 
-Made by Mykolas Baranauskas. <a href = "https://www.linkedin.com/in/mykolas-baranauskas-b3809b110/">Linkedin</a>.
+Made by Mykolas Baranauskas. <a href = "https://www.linkedin.com/in/mykolas-baranauskas-b3809b110/" target = "_blank">Linkedin</a>.
