@@ -1,6 +1,6 @@
 <h2>Description</h2>
 
-A simple content management system with functionality for adding and updating articles for the admin and reading articles for the regular user. Relation to the database with Doctrine ORM.
+A simple PHP content management system with functionality for adding and updating articles for the admin and reading articles for the regular user. Relation to the database with Doctrine ORM.
 
 <h2>Instructions for launch</h2>
 
